@@ -14,3 +14,8 @@ export type CartItem = {
   quantity: number;
   price: number;
 };
+
+export type RootStackParamList = {
+  Menu: undefined;
+  Cart: { cart: CartItem[] }; // Asegúrate de que `cart` use `CartItem[]`
+};

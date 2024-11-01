@@ -1,7 +1,7 @@
 // index.tsx
 import React from 'react';
-import MenuScreen from '../Menu/MenuScreen'; // Asegúrate de que la ruta de importación es correcta
+import AppNavigator from '../../components/navigation/AppNavigator';
 
 export default function Index() {
-  return <MenuScreen />;
+  return <AppNavigator />;
 }

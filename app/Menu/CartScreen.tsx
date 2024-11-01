@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, Button, FlatList } from 'react-native';
+import { useRoute, RouteProp } from '@react-navigation/native';
+import { RootStackParamList } from '../../app/types';
 import { Food } from '../../app/types';
 
 type CartItem = Food & { quantity: number };
-const CartScreen = ({ cart }: { cart: CartItem[] }) => {
+
+const CartScreen = () => {
+  const route = useRoute<RouteProp<RootStackParamList, 'Cart'>>();
+  const cart = route.params.cart;
+
   const calculateTotal = () => {
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     let delivery = 5000;
